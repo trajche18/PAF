@@ -17,10 +17,12 @@ public class SaveFormat {
 
     public static List<Format> getAllFormats() {
         List<Format> allFormats = new ArrayList();
-        allFormats.add(new Format("Plain text", "txt"));
+        allFormats.add(new Format("Microsoft Word '97", "doc"));
+        allFormats.add(new Format("Microsoft Word XML", "docxml"));
         allFormats.add(new Format("Rich Text Format", "rtf"));
+        allFormats.add(new Format("Plain Text", "txt"));
+        allFormats.add(new Format("HTML Document", "html"));
 
-        //toevoegen
         return allFormats;
     }
 
@@ -38,11 +40,12 @@ public class SaveFormat {
         try {
             keuzeNummer = Integer.parseInt(input);
         } catch (NumberFormatException nfe) {
-            System.out.println("Geen nummer opgegeven!");
+            System.out.println("No format selected!");
         }
 
         if (!(keuzeNummer > 0 && keuzeNummer <= formats.size())) {
-            keuzeNummer = -1;
+            keuzeNummer = -1;   //-1 is net als false. De uitput toont -1 als het om nummer gaat die kleiner is dan 0 of groter dan de arrayList (5)
+            System.out.println("\nPlease select a valid format!");
         }
         return keuzeNummer;
     }
@@ -50,10 +53,10 @@ public class SaveFormat {
     public static void main(String[] args) {
         SaveFormat saveFormat = new SaveFormat();
         saveFormat.toonFormatKeuzes();
-        System.out.print("Geef je keuzenummer in: ");
+        System.out.print("\nPlease choose a format, from the formats above: ");
         int keuzeNummer = saveFormat.vraagKeuzeNummer();
-        System.out.println("keuzenummer: " + keuzeNummer);
-        System.out.println(saveFormat.getFormats().get(keuzeNummer - 1));
+        System.out.println("_____" + "\nFormatnumber chosen: " + keuzeNummer );
+        System.out.println("File saved as: " + saveFormat.getFormats().get(keuzeNummer - 1));
     }
 
 }

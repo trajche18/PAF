@@ -13,7 +13,7 @@ public class Cirkel extends Vorm {
 
     @Override
     public void teken() {
-        System.out.println(String.format("Cirkel %.2f", getStraal()));
+        System.out.println(String.format("Circle with a radius of %.2f\n", getStraal()));
     }
 
     public double getStraal() {

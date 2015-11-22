@@ -6,9 +6,9 @@ package scenario2;
 public abstract class VormTekenaar {
 
     public void tekenLinksBoven(double x, double y, Vorm vorm) {
-        System.out.println("Tekent rechthoek op (linksboven) x:" + x + ", y:" + y);
+        System.out.println("Drawing an (mathematical) object, starting from the upper left corner -> x: " +x+ " and y: " +y);
         vorm.teken();
     }
 
-    public abstract void tekenLinksOnder(double x, double y, Vorm vorm);
+   public abstract void tekenLinksOnder(double x, double y, Vorm vorm);
 }

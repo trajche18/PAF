@@ -5,13 +5,7 @@ package scenario2;
  */
 public class CirkelTekenaar extends VormTekenaar {
 
-    @Override
-    public void tekenLinksOnder(double x, double y, Vorm vorm) {
-        tekenLinksBoven(x, y - ((Cirkel) vorm).getStraal() * 2, vorm);
-    }
-
-
-    private void tekenLinksOnder(double x, double y, double straal) {
+   private void tekenLinksOnder(double x, double y, double straal) {
         tekenLinksOnder(x, y, new Cirkel(straal));
     }
 
@@ -19,12 +13,15 @@ public class CirkelTekenaar extends VormTekenaar {
         tekenLinksBoven(x, y, new Cirkel(straal));
     }
 
+    @Override
+    public void tekenLinksOnder(double x, double y, Vorm vorm) {
+        tekenLinksBoven(x, y - ((Cirkel) vorm).getStraal() * 2, vorm);
+    }
+
     public static void main(String[] args) {
         CirkelTekenaar CirkelTekenaar = new CirkelTekenaar();
-        CirkelTekenaar.tekenLinksBoven(5, 10, 20);
-        CirkelTekenaar.tekenLinksOnder(5, 10 + 40, 20);
-
-
+        CirkelTekenaar.tekenLinksBoven(5, 10, 20);  //begint bij punt links boven
+        CirkelTekenaar.tekenLinksOnder(5, 10 + 40, 20); //beging bij punt  links onder
     }
 
 }

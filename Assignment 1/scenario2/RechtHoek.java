@@ -15,9 +15,8 @@ public class Rechthoek extends Vorm {
 
     @Override
     public void teken() {
-        System.out.println(String.format("Rechthoek %.2f breed en %.2f hoog", getWidth(), getHeight()));
+        System.out.println(String.format("Rectangle with a width of %.2f and a height of %.2f\n", getWidth(), getHeight()));
     }
-
 
     public double getHeight() {
         return height;
